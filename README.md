@@ -23,16 +23,16 @@ SILVA 128 = 00:58:57
 # References
 Citation entries formatted for LaTeX users are provided in bibliography.bib.
 
-Bartram AK, Lynch MDJ, Stearns JC, Moreno-Hagelsieb G, Neufeld JD. Generation of multimillion-sequence 16S rRNA gene libraries from complex microbial communities by assembling paired-end Illumina reads. Appl Environ Microb 77, 3846–3852 (2011).
+Bartram AK, Lynch MDJ, Stearns JC, Moreno-Hagelsieb G, Neufeld JD. Generation of multimillion-sequence 16S rRNA gene libraries from complex microbial communities by assembling paired-end Illumina reads. Appl Environ Microb 77, 3846–3852 (2011). doi: https://dx.doi.org/10.1128/AEM.02772-10
 
-Caporaso JG, et al. QIIME allows analysis of high-throughput community sequencing data. Nat Methods 7, 335–336 (2010).
+Caporaso JG, et al. QIIME allows analysis of high-throughput community sequencing data. Nat Methods 7, 335–336 (2010). doi: https://dx.doi.org/10.1038/nmeth.f.303
 
 Muyzer G, de Waal EC, Uitterlinden AG. Profiling of complex microbial-populations by denaturing gradient gel-electrophoresis analysis of polymerase chain reaction-amplified genes coding for 16S rRNA. Appl Environ Microb 59, 695–700 (1993).
 
 Pedregosa F, et al. Scikit-learn: Machine Learning in Python. J Mach Learn Res 12, 2825–2830 (2011).
 
-Quast C, et al. The SILVA ribosomal RNA gene database project: improved data processing and web-based tools. Nucleic Acids Res 41, D590–D596 (2012).
+Quast C, et al. The SILVA ribosomal RNA gene database project: improved data processing and web-based tools. Nucleic Acids Res 41, D590–D596 (2012). doi: https://dx.doi.org/10.1093/nar/gks1219
 
-Werner JJ, et al. Impact of training sets on classification of high-throughput bacterial 16S rRNA gene surveys. ISME J 6, 94–103 (2012).
+Werner JJ, et al. Impact of training sets on classification of high-throughput bacterial 16S rRNA gene surveys. ISME J 6, 94–103 (2012). doi: https://dx.doi.org/10.1038/ismej.2011.82
 
-Yilmaz P, et al. The SILVA and ‘All-species Living Tree Project (LTP)’ taxonomic frameworks. Nucleic Acids Res 42, D643–D648 (2013).
+Yilmaz P, et al. The SILVA and ‘All-species Living Tree Project (LTP)’ taxonomic frameworks. Nucleic Acids Res 42, D643–D648 (2013). doi: https://dx.doi.org/10.1093/nar/gkt1209
