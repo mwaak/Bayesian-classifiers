@@ -2,7 +2,7 @@
 Description: Naïve Bayesian classifiers for taxonomic classification of amplicon sequences in QIIME 2.
 
 # 16S rRNA gene V3 region using 341F/534R primers (Muyzer et al. 1993)
-As recommended by Werner et al. (2012), taxonomic classification of 16S rRNA genes may be more accurate using naïve Bayesian classifiers that have been trained on the amplified region of the 16S rRNA gene. Reference sequences and 7-level consensus taxonomic annotation from SILVA (Quast et al., 2012; Yilmaz et al. 2013) are provided that have been trimmed to the V3 region (~170 to 200 bp) via amplification by primers 341F and 534R (Muyzer et al. 1993). These primers were first used for high-throughput, paired-end Illumina sequencing of PCR amplicons by Bartram et al. (2011), who used identical primers with different nomenclature (i.e., 341F and 518R).
+As recommended by Werner et al. (2012), taxonomic classification of 16S rRNA genes may be more accurate using naïve Bayesian classifiers that have been trained on the amplified region of the 16S rRNA gene. Reference sequences and 7-level consensus taxonomic annotation from SILVA (Quast et al. 2012; Yilmaz et al. 2013) are provided that have been trimmed to the V3 region (~170 to 200 bp) via amplification by primers 341F and 534R (Muyzer et al. 1993). These primers were first used for high-throughput, paired-end Illumina sequencing of PCR amplicons by Bartram et al. (2011), who used identical primers with different nomenclature (i.e., 341F and 518R).
 
 QIIME-compatible reference files for the entire 16S rRNA gene (99_otus_16S.fasta and consensus_taxonomy_7_levels_99.txt) were imported as artifact files (.qza) in QIIME 2 v2018.6 (Caporaso et al. 2010; https://qiime2.org). These files are freely available online courtesy of the QIIME Development Team and the German Network for Bioinformatics Infrastructure (https://www.arb-silva.de/download/archive/qiime).
 
@@ -14,7 +14,9 @@ Walltimes required (hh:mm:ss) using 1 node and 24 Intel Ivy Bridge processors (~
 SILVA 132 = 01:25:08
 SILVA 128 = 00:58:57
 
-# These classifiers were trained using the following commands in QIIME 2-2018.6:
+# QIIME 2 commands
+These classifiers were trained using the following commands in QIIME 2-2018.6:
+
 > qiime tools import --type 'FeatureData[Sequence]' --input-path 99_otus_16S.fasta --output-path 99_otus.qza
 
 > qiime tools import --type 'FeatureData[Taxonomy]' --input-format HeaderlessTSVTaxonomyFormat --input-path consensus_taxonomy_7_levels_99.txt --output-path consensus_taxonomy_7_levels_99.qza
