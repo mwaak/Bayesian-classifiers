@@ -16,8 +16,11 @@ SILVA 128 = 00:58:57
 
 # These classifiers were trained using the following commands in QIIME 2-2018.6:
 > qiime tools import --type 'FeatureData[Sequence]' --input-path 99_otus_16S.fasta --output-path 99_otus.qza
+
 > qiime tools import --type 'FeatureData[Taxonomy]' --input-format HeaderlessTSVTaxonomyFormat --input-path consensus_taxonomy_7_levels_99.txt --output-path consensus_taxonomy_7_levels_99.qza
+
 > qiime feature-classifier extract-reads --i-sequences 99_otus.qza --p-f-primer CCTACGGGAGGCAGCAG --p-r-primer ATTACCGCGGCTGCTGG --o-reads 99_otus_V3.qza
+
 > qiime feature-classifier fit-classifier-naive-bayes --i-reference-reads 99_otus_V3.qza --i-reference-taxonomy consensus_taxonomy_7_levels_99.qza --o-classifier 99_otus_V3_classifier.qza
 
 # References
