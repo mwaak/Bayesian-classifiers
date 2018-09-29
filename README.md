@@ -8,22 +8,27 @@ QIIME-compatible reference files for the entire 16S rRNA gene (99_otus_16S.fasta
 
 The classifier was trained in QIIME 2 v2018.6 using scikit-learn v0.19.1 (Pedregosa et al. 2011). NOTE: The TaxonomicClassifier artifacts provided cannot be used with other versions of scikit-learn. While the classifiers may complete successfully, the results will be unreliable.
 
-These files were created using the Mesabi HP Linux cluster at the University of Minnesota Supercomputing Institute (https://www.msi.umn.edu).
-
-Walltimes required (hh:mm:ss) using 1 node and 24 Intel Ivy Bridge processors (~93.5 GB of RAM)
-SILVA 132 = 01:25:08
-SILVA 128 = 00:58:57
+These files were created using the 'Mesabi' HP Linux cluster at the University of Minnesota Supercomputing Institute (https://www.msi.umn.edu).
 
 # QIIME 2 commands
 These classifiers were trained using the following commands in QIIME 2-2018.6:
 
-> qiime tools import --type 'FeatureData[Sequence]' --input-path 99_otus_16S.fasta --output-path 99_otus.qza
-
-> qiime tools import --type 'FeatureData[Taxonomy]' --input-format HeaderlessTSVTaxonomyFormat --input-path consensus_taxonomy_7_levels_99.txt --output-path consensus_taxonomy_7_levels_99.qza
-
-> qiime feature-classifier extract-reads --i-sequences 99_otus.qza --p-f-primer CCTACGGGAGGCAGCAG --p-r-primer ATTACCGCGGCTGCTGG --o-reads 99_otus_V3.qza
-
-> qiime feature-classifier fit-classifier-naive-bayes --i-reference-reads 99_otus_V3.qza --i-reference-taxonomy consensus_taxonomy_7_levels_99.qza --o-classifier 99_otus_V3_classifier.qza
+(1) Import 99% reference operational taxonomic units (OTUs) from SILVA as QIIME 2 artifact.
+~~~bash
+qiime tools import --type 'FeatureData[Sequence]' --input-path 99_otus_16S.fasta --output-path 99_otus.qza
+~~~
+(2) Import taxonomic annotation for the SILVA 99% OTUs as QIIME 2 artifact. Consensus taxonomy was used, which is organized into 7 levels (i.e., D_0__Domain;D_1__Phylum;D_2__Class;D_3__Order;D_4__Family;D_5__Genus;D_6__species)
+~~~bash
+qiime tools import --type 'FeatureData[Taxonomy]' --input-format HeaderlessTSVTaxonomyFormat --input-path consensus_taxonomy_7_levels_99.txt --output-path consensus_taxonomy_7_levels_99.qza
+~~~
+(3) Find and remove forward and reverse primers (plus all nucleotides before/after the primers).
+~~~bash
+qiime feature-classifier extract-reads --i-sequences 99_otus.qza --p-f-primer CCTACGGGAGGCAGCAG --p-r-primer ATTACCGCGGCTGCTGG --o-reads 99_otus_V3.qza
+~~~
+(4) Train a naïve Bayesian classifier using the trimmed representative sequences and taxonomy.
+~~~bash
+qiime feature-classifier fit-classifier-naive-bayes --i-reference-reads 99_otus_V3.qza --i-reference-taxonomy consensus_taxonomy_7_levels_99.qza --o-classifier 99_otus_V3_classifier.qza
+~~~
 
 # References
 Citation entries formatted for LaTeX users are provided in bibliography.bib.
