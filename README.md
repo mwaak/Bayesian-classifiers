@@ -1,1 +1,1 @@
-This repository contains custom reference files used for amplicon sequencing.
+This repository contains custom reference files for analysis of amplicon sequences.
